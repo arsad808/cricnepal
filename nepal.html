@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal National Cricket Team</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        section {
+            display: none;
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .list li {
+            margin-bottom: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .player-profile {
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .player-profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0px 0;
+            position: fixed;
+            bottom: 0;
+            width:100%;
+        }
+
+        .quick-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quick-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .quick-links a:hover {
+            background-color: #555;
+        }
+        p{
+            text-decoration:bold;
+            }
+        img{
+            weidth:500px;
+            height:500px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nepal National Cricket Team-(CAN)</h1>
+            <nav>
+                <ul>
+                    <li><a href="#news">Home</a></li>
+                    <li><a href="#players">Players</a></li>
+                    <li><a href="#teams">Teams</a></li>
+                    <li><a href="#fixtures">Fixtures</a></li>
+                    <li><a href="#matches">Upcoming Matches</a></li>
+                    <li><a href="#results">Results</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="news" class="active">
+        <div class="container">
+            <h2>Latest News</h2>
+            <p><img src="https://media.cricnepal.com/assets/Picsart_24-07-09_16-39-16-149-scaled.webp">
+                
+                
+                
+                The Nepalese national women’s  cricket team suffered a 33-run defeat in their first practice match in Sri Lanka.  Nepal is playing three  T20 matches against the Sri Lanka Development Squad as part of their preparation for the ACC Women’s Asia Cup 2024, which begins on July 19 in Sri Lanka.The Nepalese side invited the home side to bat first who scored 118/8 in the allotted 20 overs. Imesha Dulani and Kaushini Nuthyangana who have played a few WT20I matches jointly top-scored with 27 runs. For  Nepal, pacer Sabnam Rai grabbed three wickets whilst Rajmati Airee got one wicket.
+Due to rain in the second inning, the revised target was 96 runs from 15 over. Nepal managed to score only 63/9 at the end of 15 overs. Rubina Chhetri led the batting card with a run-a-ball 17 whereas Sita Rana Magar scored a sluggish 28-ball 11. For Sri Lanka, Dewmi Vihanga picked up three wickets while Shehani bagged a couple of wickets.The second match will be played tomorrow (July 10). The Nepalese team will have various practice sessions at Colts and Moore for five days before playing the final  T20 match on July 16.</p>
+        </div>
+        <div class="quick-links"></div>
+    </section>
+
+    <section id="players">
+        <div class="container">
+            <h2>Nepal Cricket Team Players</h2>
+            <ul id="player-list" class="list"></ul>
+        </div>
+    </section>
+
+    <section id="teams">
+        <div class="container">
+            <h2>Nepal Cricket Teams</h2>
+            <ul id="team-list" class="list"></ul>
+        </div>
+    </section>
+
+    <section id="fixtures">
+        <div class="container">
+            <h2>Fixtures</h2>
+            <ul id="fixtures-list" class="list"></ul>
+        </div>
+    </section>
+
+    <section id="matches">
+        <div class="container">
+            <h2>Matches</h2>
+            <ul id="match-list" class="list"></ul>
+        </div>
+    </section>
+
+    <section id="results">
+        <div class="container">
+            <h2>Results</h2>
+            <ul id="results-list" class="list"></ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nepal Cricket Team Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample data for Nepali cricket players
+            const players = [
+               
+                { 
+                    name: "Sandeep Lamichhane", 
+                    role: "Bowler", 
+                    Born:"August 2, 2000 (age 23 years), Aruchour", 
+                    ODIDebut:"1 August 2018 v Netherlands", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "Leg-break, Googly",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuh0hpVCznUjQ9DNz8lF4njyryEbMf0jU8DQ&s"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://www.cricnepal.com/wp-content/uploads/2023/06/Md-Aasif-Sheikh-Nepal-WCQ23-DP.webp"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: ""  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://www.cricnepal.com/wp-content/uploads/2022/07/Anil-Sah-nepalcricket-994c75c052d0e5f338e1ac209b9f9e16.webp"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://www.cricnepal.com/wp-content/uploads/2023/06/Rohit-Paudel-Nepal-WCQ23-DP.webp"  // Replace with actual image URL
+                },
+                { 
+                    name: "Dipendra Singh Airee", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://www.cricnepal.com/wp-content/uploads/2023/06/Dipendra-Singh-Airee-Nepal-WCQ23-DP.webp"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },
+                { 
+                    name: "Aasif Sheikh", 
+                    role: "Opening-Batter", 
+                    Born:"January 22, 2001 (age 23 years), Birgunj", 
+                    ODIDebut:"7 September 2021 v PNG", 
+                    battingStyle: "Right-handed", 
+                    bowlingStyle: "None",
+                    image: "https://via.placeholder.com/100"  // Replace with actual image URL
+                },                
+                // Add more players similarly
+            ];
+
+            // Sample data for Nepal cricket teams
+            const teams = [
+                "Nepal National Cricket Team Seniour team",
+                "Nepal Under-19 Cricket Team",
+                "Nepal A Cricket Team",
+                "Nepal Womens",
+                // Add more team names as needed
+            ];
+
+            // Sample data for matches, fixtures, and results
+            const matches = [
+                { id: 1, team1: "Nepal", team2: "India", date: "2024-07-15", venue: "Kathmandu" },
+                { id: 2, team1: "Nepal", team2: "Sri Lanka", date: "2024-07-20", venue: "Pokhara" },
+            ];
+
+            const fixtures = [
+                { id: 1, team1: "Nepal", team2: "Pakistan", date: "2024-08-05", venue: "Lahore" },
+                { id: 2, team1: "Nepal", team2: "Bangladesh", date: "2024-08-10", venue: "Dhaka" },
+                // Add more fixture objects as needed
+            ];
+
+            const results = [
+                { id: 1, team1: "Nepal", team2: "India", result: "India won by 5 wickets" },
+                { id: 2, team1: "Nepal", team2: "Sri Lanka", result: "Match abandoned due to rain" },
+                { id: 3, team1: "Nepal", team2: "UAE", result: "Match abandoned due to rain" },
+                // Add more result objects as needed
+            ];
+
+            // Function to populate list items
+            const populateList = (listId, data) => {
+                const list = document.getElementById(listId);
+                list.innerHTML = ''; // Clear existing items
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    if (typeof item === 'string') {
+                        listItem.textContent = item;
+                    } else if (item.name) {
+                        const playerProfile = document.createElement('div');
+                        playerProfile.classList.add('player-profile');
+                        playerProfile.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}">
+                            <h3>${item.name}</h3>
+                            <p>Role: ${item.role}</p>
+                            <p>Born: ${item.Born}</p>
+                            <p>ODIDebut: ${item.ODIDebut}</p>
+                            <p>Batting Style: ${item.battingStyle}</p>
+                            <p>Bowling Style: ${item.bowlingStyle}</p>
+                        `;
+                        listItem.appendChild(playerProfile);
+                    } else {
+                        listItem.textContent = `${item.team1} vs ${item.team2} - ${item.date}, Venue: ${item.venue || ''}`;
+                    }
+                    list.appendChild(listItem);
+                });
+            };
+
+            // Function to open image in new tab
+            const openImage = (url) => {
+                window.open(url, '_blank');
+            };
+
+            // Toggle section visibility based on clicked link
+            const toggleSection = (sectionId) => {
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            };
+
+            // Event listeners for navigation links
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('href').substring(1); // Remove leading #
+                    toggleSection(sectionId);
+                });
+            });
+
+            // Event listener for player images
+            document.addEventListener('click', function(event) {
+                if (event.target.tagName === 'IMG' && event.target.parentElement.classList.contains('player-profile')) {
+                    openImage(event.target.src);
+                }
+            });
+
+            // Call functions to populate lists on page load
+            populateList('player-list', players);
+            populateList('team-list', teams);
+            populateList('match-list', matches);
+            populateList('fixtures-list', fixtures);
+            populateList('results-list', results);
+        });
+    </script>
+</body>
+</html>
